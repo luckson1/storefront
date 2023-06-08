@@ -9,8 +9,12 @@ const Hero = () => {
         Home Bliss Delivered: Elevate Your Everyday!
         </h1>
         <p className="text-base-regular max-w-[32rem] mb-6 drop-shadow-md shadow-black">
-        From kitchen miracles to bedroom wonders, we have got the goods that turn your house into a haven. Shop our top-tier essentials and let the magic unfold in every room. Experience home bliss like never before – start shopping now and thank us later!
+        From kitchen miracles to bedroom wonders, we have got the goods that turn your house into a haven. 
         </p>
+        <p>
+        Shop our top-tier essentials and let the magic unfold in every room. 
+        </p>
+        <p>Experience home bliss like never before – start shopping now and thank us later!</p>
         <UnderlineLink href="/store">Explore products</UnderlineLink>
       </div>
       <Image
