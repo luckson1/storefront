@@ -14,6 +14,7 @@ const Hero = () => {
         <UnderlineLink href="/store">Explore products</UnderlineLink>
       </div>
       <Image
+    
         src="https://res.cloudinary.com/dhciks96e/image/upload/v1686264507/jimmy-dean-Yl7Y8DhyzyY-unsplash_uwfh3p.jpg"
         layout="fill"
         loading="eager"
@@ -21,7 +22,7 @@ const Hero = () => {
         quality={90}
         objectFit="cover"
         alt="house hold goods"
-        className="absolute inset-0"
+        className="absolute inset-0 opacity-50"
         draggable="false"
       />
     </div>
