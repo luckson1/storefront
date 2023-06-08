@@ -14,7 +14,7 @@ const FooterCTA = () => {
 
         <div className="relative w-full aspect-square small:w-[35%] small:aspect-[28/36]">
           <Image
-            src="/cta_three.jpg"
+            src="https://res.cloudinary.com/dhciks96e/image/upload/v1686264508/jason-briscoe-GliaHAJ3_5A-unsplash_rkcynn.jpg"
             alt=""
             layout="fill"
             objectFit="cover"
