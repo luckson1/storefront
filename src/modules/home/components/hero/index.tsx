@@ -8,7 +8,7 @@ const Hero = () => {
         <h1 className="text-2xl-semi mb-4 drop-shadow-md shadow-black">
         Home Bliss Delivered: Elevate Your Everyday!
         </h1>
-        <p className="text-base-regular max-w-[32rem] mb-6 drop-shadow-md shadow-black">
+        <p className=" max-w-[32rem] mb-6 drop-shadow-md shadow-black">
         From kitchen miracles to bedroom wonders, we have got the goods that turn your house into a haven. 
         </p>
         <p>
