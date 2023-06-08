@@ -10,6 +10,7 @@ import React, { Fragment, useMemo } from "react"
 import { Product } from "types/medusa"
 import OptionSelect from "../option-select"
 import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
+import { useRouter } from "next/router"
 
 type MobileActionsProps = {
   product: PricedProduct
@@ -27,7 +28,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({ product, show }) => {
 
     return variantPrice || cheapestPrice || null
   }, [price])
-
+const router=useRouter()
   return (
     <>
       <div
@@ -81,7 +82,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({ product, show }) => {
                   <ChevronDown />
                 </div>
               </Button>
-              <Button onClick={addToCart}>{!inStock ? "Out of stock" : "Add to cart"}</Button>
+              <Button onClick={()=> {addToCart(); router.push("/cart")}}>{!inStock ? "Out of stock" : "Add to cart"}</Button>
             </div>
           </div>
         </Transition>
