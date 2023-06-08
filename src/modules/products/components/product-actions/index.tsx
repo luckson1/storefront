@@ -5,6 +5,7 @@ import Button from "@modules/common/components/button"
 import OptionSelect from "@modules/products/components/option-select"
 import clsx from "clsx"
 import Link from "next/link"
+import { useRouter } from "next/router"
 import React, { useMemo } from "react"
 import { Product } from "types/medusa"
 
@@ -15,7 +16,7 @@ type ProductActionsProps = {
 const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
   const { updateOptions, addToCart, options, inStock, variant } =
     useProductActions()
-
+const router=useRouter()
   const price = useProductPrice({ id: product.id!, variantId: variant?.id })
 
   const selectedPrice = useMemo(() => {
@@ -83,7 +84,7 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
         )}
       </div>
 
-      <Button onClick={addToCart}>
+      <Button onClick={()=> {addToCart(); router.push("/cart")}}>
         {!inStock ? "Out of stock" : "Add to cart"}
       </Button>
     </div>
