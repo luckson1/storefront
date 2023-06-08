@@ -14,7 +14,7 @@ const FeaturedProducts = () => {
             Latest products
           </span>
           <p className="text-2xl-regular text-gray-900 max-w-lg mb-4">
-            Our newest styles are here to help you look your best.
+          Explore our wide range of high-quality products and transform your home into a sanctuary of convenience and style. 
           </p>
           <UnderlineLink href="/store">Explore products</UnderlineLink>
         </div>
@@ -25,7 +25,7 @@ const FeaturedProducts = () => {
                   <ProductPreview {...product} />
                 </li>
               ))
-            : Array.from(Array(4).keys()).map((i) => (
+            : Array.from(Array(8).keys()).map((i) => (
                 <li key={i}>
                   <SkeletonProductPreview />
                 </li>
