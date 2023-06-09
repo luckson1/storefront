@@ -10,6 +10,7 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="preconnect" href={`//${hostname}`} crossOrigin="true" />
+          <meta name="facebook-domain-verification" content="0ubtg0t1blcdb3bus1ld4ts29ffwvl" />
           <link rel="dns-prefetch" href={`//${hostname}`} />
           <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
