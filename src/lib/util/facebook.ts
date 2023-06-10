@@ -10,13 +10,14 @@ export const initFacebookPixel = () => {
 };
 
 export const trackPurchase = (value: number, currency: string) => {
-  ReactPixel.track('Purchase', {
+  if (typeof window !== 'undefined') {  ReactPixel.track('Purchase', {
     value: value,
     currency: currency,
   });
-  
+}
 };
 
 export const trackAddToCart = () => {
-  ReactPixel.track('AddToCart');
+  if (typeof window !== 'undefined') {
+  ReactPixel.track('AddToCart');}
 };
