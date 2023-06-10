@@ -3,8 +3,10 @@ import { AccountProvider } from "@lib/context/account-context"
 import { CartDropdownProvider } from "@lib/context/cart-dropdown-context"
 import { MobileMenuProvider } from "@lib/context/mobile-menu-context"
 import { StoreProvider } from "@lib/context/store-context"
+import { initFacebookPixel} from "@lib/util/facebook"
 import { Hydrate } from "@tanstack/react-query"
 import { CartProvider, MedusaProvider } from "medusa-react"
+import { useEffect } from "react"
 import "styles/globals.css"
 import { AppPropsWithLayout } from "types/global"
 
@@ -12,6 +14,9 @@ function App({
   Component,
   pageProps,
 }: AppPropsWithLayout<{ dehydratedState?: unknown }>) {
+  useEffect(() => {
+    initFacebookPixel();
+  }, []);
   const getLayout = Component.getLayout ?? ((page) => page)
 
   return (
