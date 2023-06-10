@@ -5,8 +5,19 @@ import { useEffect } from "react";
 
 const Checkout = () => {
   useEffect(() => {
-    trackPurchase(5000, 'KES');
-  }, []);
+    import('react-facebook-pixel')
+      .then((x) => x.default)
+      .then((ReactPixel) => {
+        ReactPixel.init('806579787480746')// facebookPixelId
+        ReactPixel.pageView()
+        ReactPixel.track('Purchase', {
+          value: 5000,
+          currency: "KES",
+        });
+
+  
+      })
+  }, [])
   return (
     <>
       <Head title="Checkout" />

@@ -7,8 +7,16 @@ import { NextPageWithLayout } from "types/global"
 
 const Cart: NextPageWithLayout = () => {
   useEffect(() => {
-    trackAddToCart();
-  }, []);
+    import('react-facebook-pixel')
+      .then((x) => x.default)
+      .then((ReactPixel) => {
+        ReactPixel.init('806579787480746')// facebookPixelId
+        ReactPixel.pageView()
+        ReactPixel.track('AddToCart')
+
+  
+      })
+  }, [])
   return (
     <>
       <Head title="Shopping Bag" description="View your shopping bag" />
