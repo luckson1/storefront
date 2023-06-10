@@ -14,4 +14,9 @@ export const trackPurchase = (value: number, currency: string) => {
     value: value,
     currency: currency,
   });
+  
+};
+
+export const trackAddToCart = () => {
+  ReactPixel.track('AddToCart');
 };
