@@ -5,8 +5,8 @@ export const initFacebookPixel = () => {
     autoConfig: true,
     debug: false,
   };
-
-  ReactPixel.init('806579787480746', undefined, options);
+  if (typeof window !== 'undefined') {
+  ReactPixel.init('806579787480746', undefined, options);}
 };
 
 export const trackPurchase = (value: number, currency: string) => {
