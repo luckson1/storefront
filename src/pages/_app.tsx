@@ -15,7 +15,8 @@ function App({
   pageProps,
 }: AppPropsWithLayout<{ dehydratedState?: unknown }>) {
   useEffect(() => {
-    if (typeof window !== 'undefined') { initFacebookPixel();}
+    const ReactPixel =  require('react-facebook-pixel');
+    ReactPixel.default.init('806579787480746')
   }, []);
   const getLayout = Component.getLayout ?? ((page) => page)
 
