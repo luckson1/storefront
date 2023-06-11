@@ -6,7 +6,7 @@ import OrderCompletedTemplate from "@modules/order/templates/order-completed-tem
 import SkeletonOrderConfirmed from "@modules/skeletons/templates/skeleton-order-confirmed"
 import { GetStaticPaths, GetStaticProps } from "next"
 import { useRouter } from "next/router"
-import { ReactElement } from "react"
+import { ReactElement, useEffect } from "react"
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query"
 import { NextPageWithLayout } from "types/global"
 
@@ -27,7 +27,22 @@ const Confirmed: NextPageWithLayout = () => {
       staleTime: Infinity,
     }
   )
+  useEffect(() => {
+   if (isSuccess) {
+    import('react-facebook-pixel')
+    .then((x) => x.default)
+    .then((ReactPixel) => {
+      ReactPixel.init('806579787480746')// facebookPixelId
+      ReactPixel.pageView()
+      ReactPixel.track('Purchase', {
+        value: data.subtotal,
+        currency: data.currency,
+      });
 
+
+    })
+   }
+  }, [data?.currency, data?.subtotal, isSuccess])
   if (isLoading) {
     return <SkeletonOrderConfirmed />
   }
