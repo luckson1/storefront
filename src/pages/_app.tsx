@@ -15,10 +15,7 @@ function App({
   Component,
   pageProps,
 }: AppPropsWithLayout<{ dehydratedState?: unknown }>) {
-  useEffect(() => {
-    const ReactPixel =  require('react-facebook-pixel');
-    ReactPixel.default.init('806579787480746')
-  }, []);
+
   const router = useRouter()
 
   useEffect(() => {
